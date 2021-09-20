@@ -6,6 +6,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 class DataGeneratorTests
@@ -23,5 +24,12 @@ class DataGeneratorTests
     {
         IntStream intStream = DataGenerator.generateRandomIntStream();
         assertEquals( DataGenerator.DATA_SIZE, ( int ) intStream.count() );
+    }
+
+    @Test
+    void test_generateRandomIntList() throws Exception
+    {
+        List< Integer > intList = DataGenerator.generateRandomIntList();
+        assertEquals( DataGenerator.DATA_SIZE, ( int ) intList.size() );
     }
 }
