@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import java.util.Base64;
+import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
@@ -25,6 +27,11 @@ public class DataGenerator
                            .limit( DATA_SIZE );
     }
     
+    public static List< Integer > generateRandomIntList()
+    {
+        return generateRandomIntStream().boxed().collect( Collectors.toList() );
+    }
+
     public static String generateTimestamp()
     {
         var formatter = DateTimeFormatter.ofPattern( TIMESTAMP_PATTERN );
