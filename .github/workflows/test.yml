@@ -13,5 +13,5 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Gradle
+      - name: Test with Gradle
         run: chmod +x gradlew && ./gradlew test
