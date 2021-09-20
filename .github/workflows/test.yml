@@ -1,6 +1,6 @@
 name: Java CI
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
@@ -13,5 +13,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - run: echo "$GITHUB_ACTOR"
       - name: Build with Gradle
         run: chmod +x gradlew && ./gradlew build
