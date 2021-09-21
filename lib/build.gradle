@@ -54,6 +54,10 @@ publishing {
     }
     publications {
         gpr( MavenPublication ) {
+            groupId = 'byc'
+            artifactId = 'utils'
+            version = '0.0.1'
+
             from( components.java )
         }
     }
