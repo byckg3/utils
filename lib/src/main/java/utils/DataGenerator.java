@@ -19,17 +19,27 @@ public class DataGenerator
 
     public static String TIMESTAMP_PATTERN = "yyyyMMddHHmmssSSS";
 
-    public static IntStream generateRandomIntStream()
+    public static IntStream generateRandomIntStream( int size )
     {
         return DoubleStream.generate( Math::random )
                            .mapToInt( randomValue -> ( int ) ( randomValue * ( MAX_INT - MIN_INT + 1 ) + MIN_INT ) )
                            .distinct()
-                           .limit( DATA_SIZE );
+                           .limit( size );
+    }
+
+    public static IntStream generateRandomIntStream()
+    {
+        return generateRandomIntStream( DATA_SIZE );
     }
     
+    public static List< Integer > generateRandomIntList( int size )
+    {
+        return generateRandomIntStream( size ).boxed().collect( Collectors.toList() );
+    }
+
     public static List< Integer > generateRandomIntList()
     {
-        return generateRandomIntStream().boxed().collect( Collectors.toList() );
+        return generateRandomIntList( DATA_SIZE );
     }
 
     public static String generateTimestamp()
