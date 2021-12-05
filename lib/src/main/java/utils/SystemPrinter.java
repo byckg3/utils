@@ -5,6 +5,18 @@ import java.util.Map;
 
 public class SystemPrinter
 {
+    public static < E > void println( int[] array )
+    {
+        StringBuilder elements = new StringBuilder( "[" );
+        for ( int i = 0; i < array.length; i++ )
+        {
+            elements.append( " " + array[ i ] );
+        }
+        elements.append( " ]" );
+
+        System.out.println( elements.toString() );
+    }
+
     public static < E > void println( List< E > list )
     {
         StringBuilder elements = new StringBuilder( "[" );
