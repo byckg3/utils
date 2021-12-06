@@ -17,6 +17,14 @@ public class SystemPrinter
         System.out.println( elements.toString() );
     }
 
+    public static < E > void println( int[][] array )
+    {
+        for ( int i = 0; i < array.length; i++ )
+        {
+            println( array[ i ] );
+        }
+    }
+
     public static < E > void println( List< E > list )
     {
         StringBuilder elements = new StringBuilder( "[" );
