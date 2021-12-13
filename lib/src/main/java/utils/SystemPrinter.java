@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -23,6 +24,11 @@ public class SystemPrinter
         {
             println( array[ i ] );
         }
+    }
+
+    public static < E > void println( E[] array )
+    {
+        println( Arrays.asList( array ) );
     }
 
     public static < E > void println( List< E > list )
